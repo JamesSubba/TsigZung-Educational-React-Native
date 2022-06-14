@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet,TouchableOpacity,View} from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 const Word2 = ({day,id}) => {  
@@ -16,11 +16,9 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 18,
       color:'black',
-   
-      
     },
     Touch:{
-     marginLeft:25,
+      marginLeft:25,
       marginRight:25,
       marginBottom:10,
       borderRadius:10,
@@ -34,8 +32,5 @@ const styles = StyleSheet.create({
       shadowOffset:{width:9,height:8},
       flexDirection:'row',
       paddingLeft:115,
-     
-      
     },
-   
   });

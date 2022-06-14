@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import { StyleSheet, Text, View ,SafeAreaView, } from 'react-native';
+import { StyleSheet, SafeAreaView, } from 'react-native';
 import Day from './screens/Day';
 import Detail from './screens/Detail';
 import Activity from './screens/Activity';
@@ -9,8 +9,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-
-
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -27,18 +25,17 @@ export default function App() {
 
   return (
     <SafeAreaView style={{flex:1}}>
-    <NavigationContainer >
-        <Stack.Navigator>
-            <Stack.Screen name="Level" component={Level} options={{headerShown:false}}/>
-            <Stack.Screen name="Day" component={Day} options={{headerShown:false}}/>
-            <Stack.Screen name="Detail" component={Detail} options={{headerShown:false}} />
-            <Stack.Screen name="Activity" component={Activity} options={{headerShown:false}}/>
-            <Stack.Screen name="Result" component={Result} options={{headerShown:false}}/>
-        </Stack.Navigator>
-        <StatusBar mode="light" />
-    </NavigationContainer>
+      <NavigationContainer >
+          <Stack.Navigator>
+              <Stack.Screen name="Level" component={Level} options={{headerShown:false}}/>
+              <Stack.Screen name="Day" component={Day} options={{headerShown:false}}/>
+              <Stack.Screen name="Detail" component={Detail} options={{headerShown:false}} />
+              <Stack.Screen name="Activity" component={Activity} options={{headerShown:false}}/>
+              <Stack.Screen name="Result" component={Result} options={{headerShown:false}}/>
+          </Stack.Navigator>
+          <StatusBar mode="light" />
+      </NavigationContainer>
     </SafeAreaView>
-    
   );
 }
 

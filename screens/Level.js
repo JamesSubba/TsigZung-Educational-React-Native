@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const {width,height}= Dimensions.get('window');
 const Level = ({navigation}) => {
-  const removeData = async () => {
+const removeData = async () => {
     await AsyncStorage.removeItem('scoreCount');
 }
 
@@ -84,7 +84,6 @@ const styles=StyleSheet.create({
       head:{
         fontSize:30,
         fontWeight:'bold',
-        // fontFamily:'Nunito-Regular',
         color:'white'
       },
       subHead:{

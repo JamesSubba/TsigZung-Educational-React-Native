@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import db from "../firebase";
-import { doc,getDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 import { Audio } from 'expo-av';
 import { Ionicons } from '@expo/vector-icons';
@@ -33,6 +33,7 @@ const Detail = ({navigation, route}) => {
           }
         }
     }
+
     function handlePressed() {
        setPressed(false);
     }
@@ -81,7 +82,6 @@ const styles = StyleSheet.create({
     },
     wordBox:{
       height:height<380 ? 150:170,
-      // width:width<380 ? 230:250,
       borderRadius:30,
       alignItems:'center',
       justifyContent:'center',
@@ -118,8 +118,6 @@ const styles = StyleSheet.create({
       alignItems:'center',
       backgroundColor:'#12e6cd',
       height:50,
-      // width:width<390 ? 170:190,
-      // marginLeft:width<400 ? 105:115,
       margin:width<390 ? 95:110,
       marginTop:height<380 ? 50:-55,
       marginBottom:20,

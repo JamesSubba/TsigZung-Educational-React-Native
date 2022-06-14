@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, View ,ScrollView,Image,Text,Dimensions } from 'react-native';
+import { StyleSheet, View, ScrollView, Image, Text, Dimensions } from 'react-native';
 import db from "../firebase";
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import Word from '../components/Word';
@@ -55,13 +55,12 @@ const Day = ({navigation, route}) => {
           </View>
           <View style={{marginTop:height<400 ? 40:220,paddingLeft:width<400 ? 85:95}}>
             <Text style={{fontSize:15, fontWeight:'bold'}}>Unlock new words each day</Text>
-            
           </View>
           <View style={styles.bodyCon}>
-            {words.slice(x,y).slice(0,counter+1).map(({ id, day  })=>(
+            {words.slice(0,counter+1).slice(x,y).map(({ id, day  })=>(
               <Word key={id} id={id} day={day} navigation={navigation} />
                 ))}
-            {words.slice(x,y).slice(counter+1,365).map(({ id, day  })=>(
+            {words.slice(counter+1,365).slice(x,y).map(({ id, day  })=>(
               <Word2 key={id} id={id} day={day}  />
             ))}
           </View> 

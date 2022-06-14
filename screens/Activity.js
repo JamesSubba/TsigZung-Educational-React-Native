@@ -25,11 +25,11 @@ const Activity = ({navigation, route}) => {
       }
       return array;
     }
+
     const getQuizAndQuestionDetails = async () => {
       const docRef = doc(db, "words", wordid);
       const colRef = collection(docRef, "q&a");
       const questions = await getDocs(colRef);
-
       let tempQuestions = [];
       await questions.docs.forEach(async res => {
         let question = res.data();
@@ -41,6 +41,7 @@ const Activity = ({navigation, route}) => {
       });
       setQuestions([...tempQuestions]);
     }
+
     useEffect(()=> {
         getQuizAndQuestionDetails();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -70,7 +71,7 @@ const Activity = ({navigation, route}) => {
         </View>
           <View style={styles.quiz}>
             <Text style={{fontSize:17,color:'#FF007F', fontWeight:'bold',marginTop:-10}}>Test your knowledge</Text>
-            <View style={{marginTop:height<380 ? 100:-120,marginLeft:width<400 ? 200:230}}>
+            <View style={{marginTop:height<380 ? 100:-120,marginLeft:width<380 ? 185:230}}>
               <Image source={require('../assets/11.png')} style={{height:height<380 ? 100:130,width:width<380 ? 100:110}}/>
             </View>
               <ScrollView> 
@@ -127,7 +128,11 @@ const Activity = ({navigation, route}) => {
               navigation.navigate('Result',
               {score: correctCount, answers: answers, wordid: wordid, day: day}
               )}
-            else{Alert.alert('Please answer all the questions!!!!')}}} style={styles.btn}>
+            else{Alert.alert("Quiz Alert",
+            "Please Answer all the Questions!",
+            [
+              { text: "OK", onPress: () => console.log("OK Pressed") }
+            ])}}} style={styles.btn}>
               <Text style={{fontSize:20,color:'white',fontWeight:'bold'}}>Submit</Text>
         </TouchableOpacity>
     </View>
@@ -184,7 +189,7 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       alignItems:'center',
       marginTop:height<380 ? 40:-50,
-      margin:width<400 ? 130:150,
+      margin:width<390 ? 125:150,
       marginBottom:height<400 ? 10:10,
       shadowColor:'grey',
       shadowOpacity:0.4,
